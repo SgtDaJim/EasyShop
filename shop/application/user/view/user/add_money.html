@@ -1,0 +1,18 @@
+{extend name="../thinkphp/tpl/load_bootstrap.tpl" /}
+{block name="body"}
+<div class="col-lg-12"><h1 class="text-center">充值</h1></div>
+<div class="col-lg-4"></div>
+<div class="col-lg-4">
+    <p class="text-center text-danger">余额 ：{$money}</p>
+    <form role="form" method="post" action="add_money">
+        <div class="form-group">
+            <label for="add_money">充值额度</label>
+            <input type="text" class="form-control" id="add_money" name="add_money">
+        </div>
+        <div class="form-group">
+            <input type="submit" class="form-control btn-info" name="submit" value="充值">
+        </div>
+    </form>
+</div>
+<div class="col-lg-4"></div>
+{/block}

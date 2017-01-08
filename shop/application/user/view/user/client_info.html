@@ -1,0 +1,55 @@
+{extend name="../thinkphp/tpl/load_bootstrap.tpl" /}
+{block name="client"}{/block}
+{block name="body"}
+<div class="col-lg-12"><h1 class="text-center">账号信息</h1></div>
+<div class="col-lg-4">
+    <ul class="nav nav-list">
+        <li class="active">
+            <a href="client_info">账号信息</a>
+        </li>
+        <li>
+            <a href="order_info">订单信息</a>
+        </li>
+    </ul>
+</div>
+<div class="col-lg-4">
+    <form role="form" method="post" action="modify_client_info">
+        <div class="form-group">
+            <label for="phone">手机号码</label>
+            <p class="form-control-static" id="phone">{$data.phone}</p>
+        </div>
+        <div class="form-group">
+            <label for="name">昵称</label>
+            <input type="text" class="form-control" id="name" name="name" value="{$data.username}">
+        </div>
+        <div class="form-group">
+            <label for="password">密码</label>
+            <input type="password" class="form-control" id="password" name="password">
+        </div>
+        <div class="form-group">
+            <label for="cfpwd">确认密码</label>
+            <input type="password" class="form-control" id="cfpwd" name="cfpwd">
+        </div>
+        <div class="form-group">
+            <label for="address">地址</label>
+            <input type="text" class="form-control" id="address" name="address" value="{$data.address}">
+        </div>
+        <div class="form-group">
+            <label for="regtime">注册时间</label>
+            <p class="form-control-static" id="regtime">{$data.reg_time}</p>
+        </div>
+        <div class="form-group">
+            <label for="money">余额</label>
+            <p class="form-control-static text-danger" id="money">{$data.money}</p>
+        </div>
+        <div class="form-group">
+            <input type="submit" class="form-control btn-danger" name="submit" value="保存">
+        </div>
+    </form>
+    <div class="form-group">
+        <a href="go_add_money" ><button class="form-control btn-info" >充值</button></a>
+    </div>
+</div>
+<div class="col-lg-4"></div>
+
+{/block}

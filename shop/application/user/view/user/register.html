@@ -1,0 +1,67 @@
+{extend name="../thinkphp/tpl/load_bootstrap.tpl" /}
+{block name="login"}{/block}
+{block name="body"}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <form id="reg" class="form-horizontal" method="POST" action="register">
+                <fieldset>
+                    <legend align="center">注册信息(全部必填)</legend>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">昵称</label>
+                        <div class="col-md-8">
+                            <input type="text" name="name" id="name" class="form-control" placeholder="只能含有英文、数字、'-'和'_'，长度不超过10位">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">手机</label>
+                        <div class="col-md-8">
+                            <input type="text" name="phone" id="phone" class="form-control" placeholder="输入正确的手机号码">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">密码</label>
+                        <div class="col-md-8">
+                            <input type="password" name="password" id="pwd" class="form-control" placeholder="8~16位，支持大小写字母、数字、符号">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">确认密码</label>
+                        <div class="col-md-8">
+                            <input type="password" name="cfpwd" id="cfpwd" class="form-control" placeholder="再次输入密码">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">地址</label>
+                        <div class="col-md-8">
+                            <input type="text" name="address" id="address" class="form-control" placeholder="地址">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-4 col-sm-10">
+                            <input type="submit" name="submit" id="sm" value="完成注册" class="btn btn-success">
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+            <div id="tips"></div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+{/block}
+{block name="jq"}
+<!--<script src="__PUBLIC__/static/js/jquery-form.js"></script>-->
+<!--<script>-->
+    <!--// wait for the DOM to be loaded-->
+    <!--$(document).ready(function() {-->
+        <!--$('#reg').ajaxForm(function(data) {-->
+            <!--$('#tips').empty()-->
+                    <!--.addClass("alert alert-danger")-->
+                    <!--.css({"role":"alert","text-align":"center"})-->
+                    <!--.append(data);-->
+        <!--});-->
+    <!--});-->
+<!--</script>-->
+{/block}

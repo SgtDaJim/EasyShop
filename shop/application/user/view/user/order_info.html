@@ -1,0 +1,46 @@
+{extend name="../thinkphp/tpl/load_bootstrap.tpl" /}
+{block name="body"}
+<div class="col-lg-12"><h1 class="text-center">订单信息</h1></div>
+<div class="col-lg-12">
+    {for start="0" end="count($order)"}
+        <table class="table table-hover">
+            <caption>
+                订单号：{$order[$i]['orderid']} 下单时间：{$order[$i]['order_time']}
+                {if condition="$order[$i]['status'] eq 0"}
+                    <a href="delete_order/?orderid={$order[$i]['orderid']}" ><button class="btn btn-warning">取消订单</button></a>
+                {/if}
+            </caption>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>名称</th>
+                <th>单格</th>
+                <th>数量</th>
+                <th>单项价格</th>
+                <th>状态</th>
+            </tr>
+            {for start="0" end="count($order_product[$i])" name="j"}
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>{:db('product')->where('productid', $order_product[$i][$j]['productid'])->value('pd_name')}</td>
+                <td>{$order_product[$i][$j]['old_price']}</td>
+                <td>{$order_product[$i][$j]['number']}</td>
+                <td>{$order_product[$i][$j]['number']*$order_product[$i][$j]['old_price']}</td>
+                <td>
+                    {switch name="$order[$i]['status']" }
+                        {case value="0" }未发货{/case}
+                        {case value="1"}已发货{/case}
+                    {/switch}
+                </td>
+            </tr>
+            {/for}
+        </table>
+        <p>总价：{$order[$i]['total_price']} 地址：{$order[$i]['order_address']} 手机：{$order[$i]['order_phone']}</p>
+    {/for}
+</div>
+{/block}

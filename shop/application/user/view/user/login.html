@@ -1,0 +1,43 @@
+{extend name="../thinkphp/tpl/load_bootstrap.tpl" /}
+{block name="client"}{/block}
+{block name="cart"}{/block}
+{block name="body"}
+<div class="row-fluid">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+        <div align="center">
+            <form name="login" method="POST" action="login">
+                <fieldset>
+                    <legend>欢迎光临</legend>
+                    <div class="form-group">
+                        <label>手机</label>
+                        <input type="text" name = "phone" class="form-control"  placeholder="请输入手机……" >
+                    </div>
+                    <div class="form-group">
+                        <label>密码</label>
+                        <input type="password" name = "password" class="form-control"  placeholder="请输入密码……" >
+                    </div>
+                    <input type="submit" name="submit" class="btn btn-success" value="&nbsp;登录&nbsp;">&nbsp;
+                    <a href="go_register"><button type="button" class="btn btn-info">还没注册？</button></a>
+                </fieldset>
+            </form>
+            <div id="tips"></div>
+        </div>
+    </div>
+    <div class="col-lg-4"></div>
+</div>
+{/block}
+{block name="jq"}
+<!--<script src="__PUBLIC__/static/js/jquery-form.js"></script>-->
+<!--<script>-->
+    <!--// wait for the DOM to be loaded-->
+    <!--$(document).ready(function() {-->
+        <!--$('#reg').ajaxForm(function(data) {-->
+            <!--$('#tips').empty()-->
+                    <!--.addClass("alert alert-danger")-->
+                    <!--.css({"role":"alert","text-align":"center"})-->
+                    <!--.append(data);-->
+        <!--});-->
+    <!--});-->
+<!--</script>-->
+{/block}
